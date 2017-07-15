@@ -16,6 +16,8 @@ require_once _ROOT_INCLUDES . 'functions_user.php';
 require_once _ROOT_INCLUDES . 'header.php';
 
 
+
+
 $title_app_name = "LSAC";
 $title_app_separator = " // ";
 $title_app_title = "Default Title";
