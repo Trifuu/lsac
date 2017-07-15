@@ -1,0 +1,19 @@
+.main_logo{
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+.img_login{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.navbar{
+    
+}
+.users_edit{
+    padding: 2px;
+    min-width: 45px;
+}
