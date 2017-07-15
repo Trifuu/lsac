@@ -36,10 +36,12 @@ switch ($page):
     case "users":
         require_once _ROOT_CONTENT . 'users/controller.php';
         break;
-    
+    case "evenimente":
+        require_once _ROOT_CONTENT.'evenimente/controller.php';
+        break;
     default:
         header('HTTP/1.0 404 Not Found');
-        $content = _ROOT_CONTENT . "/error_pages/404.php";
+        $content = _ROOT_CONTENT . "404.php";
         break;
 endswitch;
 

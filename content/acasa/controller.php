@@ -38,7 +38,7 @@ switch ($view):
         default:
                 header('HTTP/1.0 404 Not Found');
                 $title_app_title = "404 - Pagina Inexistenta";
-                $content = _ROOT_CONTENT . "/error_pages/404.php";
+                $content = _ROOT_CONTENT . "404.php";
                 break;
 endswitch;
 

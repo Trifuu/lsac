@@ -9,7 +9,7 @@ $js[] = "datatable/dataTables.buttons.min.js";
 $js[] = "datatable/dataTables.editor.min.js";
 $js[] = "datatable/dataTables.select.min.js";
 $title_app_title = "Utilizatori - LSAC";
+
 $css[] = "datatables.css";
 
 $content = _ROOT_CONTENT . $page . "/tmpl_dashboard.php";
-

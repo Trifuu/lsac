@@ -3,34 +3,12 @@ defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
 
 ?>
 
-<div class="container container-page">
-        <div class="row">
+<div class="container container-page" style="margin-top: -21px;background:#ecf0f1;">
+    <div class="row">
                 <div class="col-md-12">
                         <h1 class="page-title">Editeaza profilul</h1>
                 </div>
         </div>
-
-        <?php
-        if (isset($_GET["message"])) {
-                if (isset($_GET["status"]) && $_GET["status"] == "ok") {
-                        ?>
-                        <div class="alert alert-success">
-                                <a href="<?php getUrl("acasa", "edit", true); ?>" class="close">&times;
-                                </a>
-                                <strong><i class="fa fa-check-circle"></i></strong> <?php echo htmlspecialchars($_GET["message"], ENT_QUOTES); ?>
-                        </div>
-                        <?php
-                } else if (isset($_GET["status"]) && $_GET["status"] == "nok") {
-                        ?>
-                        <div class="alert alert-danger">
-                                <a href="<?php getUrl("acasa", "edit", true); ?>" class="close">&times;
-                                </a>
-                                <strong><i class="fa fa-exclamation-circle"></i></strong> <?php echo htmlspecialchars($_GET["message"], ENT_QUOTES); ?>
-                        </div>
-                        <?php
-                }
-        }
-        ?>
 
         <div class="row">
                 <div class="col-md-6">
@@ -49,10 +27,13 @@ defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
                                         <label for="tel"><i class="fa fa-phone"></i> Telefon</label>
                                         <input type="text" class="form-control input-lg" id="tel" name="tel" placeholder="Telefon" value="<?php echo htmlspecialchars($user["tel"], ENT_QUOTES); ?>">
                                 </div>
-
+                                <div class="form-group">
+                                        <label for="tel"><i class="fa fa-phone"></i> Telefon</label>
+                                        <input type="text" class="form-control input-lg" id="tel" name="tel" placeholder="Telefon" value="<?php echo htmlspecialchars($user["tel"], ENT_QUOTES); ?>">
+                                </div>
 
                                 <div class="row">
-                                        <div class="col-xs-12 col-md-12 col-lg-12">
+                                    <div class="col-xs-12 col-md-12 col-lg-12">
                                                 <button type="submit" class="btn btn-success"><i class="fa fa-send"></i>  Salveaza</button>
                                         </div>
                                 </div>
@@ -71,13 +52,13 @@ defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
                                         <input type="password" class="form-control input-lg" id="parola_noua" name="parola_noua" placeholder="Re-introdu Parola">
                                 </div>
                                 <div class="form-group">
-                                        <label for="parola_veche"><i class="fa fa-lock"></i>Introdu parola actuala</label>
+                                        <label for="parola_veche"><i class="fa fa-lock"></i> Introdu parola actuala</label>
                                         <input type="password" class="form-control input-lg" id="parola_veche" name="parola_veche" placeholder="Parola Actuala">
                                 </div>
 
 
                                 <div class="row">
-                                        <div class="col-xs-12 col-md-12 col-lg-12">
+                                        <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 12px;">
                                                 <button type="submit" class="btn btn-success"><i class="fa fa-send"></i>  Schimba parola</button>
                                         </div>
                                 </div>
@@ -85,85 +66,5 @@ defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
                 </div>
         </div>
 
-        <div class="row">
-                <div class="col-lg-12">      
-                        <h2 class="page-title">Drepturi</h2>
-                        <table class="table table-custom table-striped">
-                                <thead>
-                                        <tr>
-                                                <th>Drept</th>
-                                                <th>Status</th>
-                                        </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                                <td>Administrator</td>
-                                                <td>
-                                                    <?php
-                                                    if ($user["tip"]==1) {
-                                                            ?>
-                                                                <span style="color:darkgreen"><b><i class="fa fa-check-circle"></i></b> Da</span>
-                                                                <?php
-                                                        } else {
-                                                                ?>
-                                                                <span style="color:red"><b><i class="fa fa-times-circle"></i></b> Nu</span>             
-                                                                <?php
-                                                        }
-                                                        ?>
-                                                </td>     
-                                        </tr>
-                                        <tr>
-                                                <td>Manager</td>
-                                                <td>
-                                                    <?php
-                                                    if ($user["tip"]==2) {
-                                                            ?>
-                                                                <span style="color:darkgreen"><b><i class="fa fa-check-circle"></i></b> Da</span>
-                                                                <?php
-                                                        } else {
-                                                                ?>
-                                                                <span style="color:red"><b><i class="fa fa-times-circle"></i></b> Nu</span>             
-                                                                <?php
-                                                        }
-                                                        ?>
-                                                </td>
-                                        </tr>
-                                        <tr>
-                                                <td>Contributor</td>
-                                                <td>
-                                                    <?php
-                                                    if ($user["tip"] == 3) {
-                                                            ?>
-                                                                <span style="color:darkgreen"><b><i class="fa fa-check-circle"></i></b> Da</span>
-                                                                <?php
-                                                        } else {
-                                                                ?>
-                                                                <span style="color:red"><b><i class="fa fa-times-circle"></i></b> Nu</span>             
-                                                                <?php
-                                                        }
-                                                        ?>
-                                                </td>
-                                        </tr>
-                                        <tr>
-                                                <td>Supervizor</td>
-                                                <td>
-                                                    <?php
-                                                    if ($user["tip"] == 4) {
-                                                            ?>
-                                                                <span style="color:darkgreen"><b><i class="fa fa-check-circle"></i></b> Da</span>
-                                                                <?php
-                                                        } else {
-                                                                ?>
-                                                                <span style="color:red"><b><i class="fa fa-times-circle"></i></b> Nu</span>             
-                                                                <?php
-                                                        }
-                                                        ?>
-                                                </td>
-                                        </tr>
-                                        
-                                </tbody>
-                        </table>
-                </div>
-        </div>
 </div>
 
