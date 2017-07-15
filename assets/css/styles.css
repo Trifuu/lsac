@@ -11,9 +11,39 @@
     z-index: 1;
 }
 .navbar{
-    
+    background: #3498db;
 }
 .users_edit{
     padding: 2px;
     min-width: 45px;
+}
+.error_page{
+    width: 100%;
+    height: -webkit-calc(100% - 97px);
+    height: -moz-calc(100% - 97px);
+    height: calc(100% - 97px);
+    background: #2980b9;
+    display: flex;
+    align-items: center;
+}
+.error_page h1{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    margin: auto;
+}
+.error_page h1 span{
+    font-weight: bold;
+    font-size: 150px;
+}
+.error_page h1 p{
+    color: #fff;
+    font-size: 40px;
+}
+#navbar .navbar-nav>.active>a{
+    background: #2980b9;
+}
+#navbar .navbar-nav>li>a {
+    color: #2c3e50;
 }

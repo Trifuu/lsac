@@ -22,7 +22,7 @@ $title_app_title = "Default Title";
 
 define("_PROD_DOMAIN", "adresa");
 define("_PREPROD_DOMAIN", "localhost");
-define("_SITE_BASE", "http://localhost/LSAC/");
+define("_SITE_BASE", "http://localhost/lsac/");
 
 define("_SITE_CSS", _SITE_BASE . "assets/css/");
 define("_SITE_JS", _SITE_BASE . "assets/js/");
