@@ -47,3 +47,27 @@
 #navbar .navbar-nav>li>a {
     color: #2c3e50;
 }
+.btn-users-edit{
+    padding: 3px;
+}
+#users >tbody >tr >td:last-child,#users >thead>tr>th:last-child{
+    width: 50px !important; 
+    text-align: center;
+}
+.dataTables_wrapper .dataTables_filter input{
+    height: 40px;
+    border:1px solid #ccc;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.users_buttons_general{
+    margin-right: 50px;
+}
+#users >tbody >tr >td:first-child,#users >thead>tr>th:first-child{
+    width: 20px !important; 
+    text-align: center;
+    padding: 0px;
+}
+.checkbox_users{
+    padding: 0px;
+}
