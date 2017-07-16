@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/html/lsac/assets/js/app/users/dashboard.js</file>
+            <file>file:/var/www/html/lsac/content/users/tmpl_dashboard.php</file>
+            <file>file:/var/www/html/lsac/includes/functions_user.php</file>
             <file>file:/var/www/html/lsac/includes/config.php</file>
+            <file>file:/var/www/html/lsac/content/users/view_dashboard.php</file>
         </group>
     </open-files>
 </project-private>
