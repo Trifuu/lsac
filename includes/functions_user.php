@@ -42,7 +42,7 @@ function get_users($table){
     }else{
         $result="[";
         for($i=0;$i<count($users);$i++){
-            $result=$result.'["'.$users[0]["nume"].'","'.$users[0]["email"].'","'.$users[0]["tel"].'","'.$users[0]["categorie"].'"],';
+            $result=$result.'["'.$users[$i]["nume"].'","'.$users[$i]["email"].'","'.$users[$i]["tel"].'","'.$users[$i]["categorie"].'","<button type=\"submit\" class=\"btn btn-danger btn-users-edit\"> Delete</button>"],';
         }
         $result=$result."]";
         return $users ==false ? null:$result;

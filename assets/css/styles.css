@@ -11,9 +11,63 @@
     z-index: 1;
 }
 .navbar{
-    
+    background: #3498db;
 }
 .users_edit{
     padding: 2px;
     min-width: 45px;
+}
+.error_page{
+    width: 100%;
+    height: -webkit-calc(100% - 97px);
+    height: -moz-calc(100% - 97px);
+    height: calc(100% - 97px);
+    background: #2980b9;
+    display: flex;
+    align-items: center;
+}
+.error_page h1{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    margin: auto;
+}
+.error_page h1 span{
+    font-weight: bold;
+    font-size: 150px;
+}
+.error_page h1 p{
+    color: #fff;
+    font-size: 40px;
+}
+#navbar .navbar-nav>.active>a{
+    background: #2980b9;
+}
+#navbar .navbar-nav>li>a {
+    color: #2c3e50;
+}
+.btn-users-edit{
+    padding: 3px;
+}
+#users >tbody >tr >td:last-child,#users >thead>tr>th:last-child{
+    width: 50px !important; 
+    text-align: center;
+}
+.dataTables_wrapper .dataTables_filter input{
+    height: 40px;
+    border:1px solid #ccc;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.users_buttons_general{
+    margin-right: 50px;
+}
+#users >tbody >tr >td:first-child,#users >thead>tr>th:first-child{
+    width: 20px !important; 
+    text-align: center;
+    padding: 0px;
+}
+.checkbox_users{
+    padding: 0px;
 }
