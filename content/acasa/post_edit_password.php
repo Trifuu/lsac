@@ -38,7 +38,7 @@ if ($user["id"] == $id) {
         }
 
         try {
-                $stmt = $db->prepare("update user set t = unix_timestamp(now()), last_action = unix_timestamp(now()), parola = :parola where id = :id");
+                $stmt = $db->prepare("update user set parola = :parola where id = :id");
                 $stmt->bindParam(':parola', $parola_hash, PDO::PARAM_STR, 64);
                 $stmt->bindParam(':id', $user["id"], PDO::PARAM_INT);
                 $stmt->execute();

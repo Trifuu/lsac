@@ -31,7 +31,7 @@ if (get_email($email) != null && $email != $user["email"]) {
 
 if ($user["id"] == $id) {
         try {
-                $stmt = $db->prepare("update user set t = unix_timestamp(now()), last_action = unix_timestamp(now()), nume = :nume, email = :email, tel = :tel where id = :id");
+                $stmt = $db->prepare("update user set nume = :nume, email = :email, tel = :tel where id = :id");
                 $stmt->bindParam(':nume', $nume, PDO::PARAM_STR, 64);
                 $stmt->bindParam(':email', $email, PDO::PARAM_STR, 64);
                 $stmt->bindParam(':tel', $tel, PDO::PARAM_STR, 15);

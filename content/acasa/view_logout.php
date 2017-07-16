@@ -7,7 +7,7 @@ $content = _ROOT_CONTENT . $page . "/default.php";
 
  
 try {
-        $stmt = $db->prepare("update user set sid = '', last_action = unix_timestamp(now()) where id = :id");
+        $stmt = $db->prepare("update user set sid = '' where id = :id");
         $stmt->bindParam(':id', $user["id"], PDO::PARAM_INT);
         $stmt->execute();
         
