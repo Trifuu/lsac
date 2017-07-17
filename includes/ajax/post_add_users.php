@@ -19,7 +19,7 @@ try{
     $stmt->bindParam(':email',$email,PDO::PARAM_STR);
     $stmt->bindParam(':tel',$telefon,PDO::PARAM_STR);
     $stmt->bindParam(':categ',$categorie,PDO::PARAM_STR);
-    $stmt->bindParam(':parola',get_user_password(),PDO::PARAM_STR);
+    $stmt->bindParam(':parola',  get_logged_in_user()["parola"],PDO::PARAM_STR);
     $stmt->execute();
 } catch (Exception $ex) {
     die($ex->getMessage());

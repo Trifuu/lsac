@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    var checkbox=[];
+    $('.checkbox_users').click(function(){
+        if (this.checked) {
+            checkbox.push($(this).attr("data-id"));
+        }else{
+            checkbox.pop($(this).attr("data-id"));
+        }
+        console.log(checkbox);
+    });
+
     $('#users_table').DataTable();
 
     $(".del-user").on("click", function () {
@@ -10,7 +20,8 @@ $(document).ready(function () {
             $.ajax({
                 type: "POST",
                 url: _SITE_BASE + "includes/ajax/post_delete_users.php",
-                data: {id: $(this).attr("data-id")},
+                data: {id: $(this).attr("data-id"),
+                       multiple:false},
                 success: function (event) {
                     location.reload();
                 },
@@ -20,12 +31,6 @@ $(document).ready(function () {
             });
         } else {
             return false;
-        }
-    });
-    
-    $(".checkbox_users").change(function () {
-        if (this.checked) {
-            alert($(this).attr("data-id"));
         }
     });
     $("#users_table_filter label").before("<div class=\"btn-group users_buttons_general\">\n\
@@ -46,7 +51,12 @@ $(document).ready(function () {
             },
             success: function (event) {
                 $(".add_line").hide();
-                $(".user_alert").remove();
+                $(".add_line td:nth-child(3) input").val("");
+                $(".add_line td:nth-child(4) input").val("");
+                $(".add_line td:nth-child(5) input").val("");
+                $(".add_line td:nth-child(6) input").val("");
+                $(".alert").remove();
+                //modificat aici sa se dea refresh si dupa sa se faca apend
                 $(".row").css("margin-top", "0px");
                 $("#users_table_wrapper").before("<div class=\"alert alert-success\" style=\"padding:0px;margin-bottom:6px;height:38px;\">\n\
                                                         <strong style=\"margin-top:8px;display:inline-block;\">Success!</strong> Contul a fost creat, parola acestuia este identica cu parola dumneavoastra.\n\
@@ -100,6 +110,34 @@ $(document).ready(function () {
                     },
                 });
             }
-            }); 
-        });
+        }); 
+    });
+    $("#delete_button").click(function(){
+            
+        if(checkbox.length>0){
+            var r = confirm("Stergi contul " + $(this).attr("data-email") + "?");
+
+            if (r == true) {
+            $.ajax({
+                type: "POST",
+                url: _SITE_BASE + "includes/ajax/post_delete_users.php",
+                data: {id: checkbox,
+                       multiple:true},
+                success: function (event) {
+                    //alert(event);
+                    console.log(event);
+                    location.reload();
+                },
+                error: function (xhr, status, error) {
+                    //alert(error);
+                },
+            });
+            } else {
+                return false;
+            }
+        } else{
+            alert("Selectati minim un rand pentru stergere.");
+        }
+        
+    });
 });

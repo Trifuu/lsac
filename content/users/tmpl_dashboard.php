@@ -28,15 +28,23 @@ defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
                     <?php
                     foreach ($users as $row) {
                         echo "<tr>";
-                        echo '<td><input class="checkbox_users" type="checkbox" data-id="'. htmlspecialchars($row["id"], ENT_QUOTES) .'"></td>';
+                        if($row["id"]!=  get_logged_in_user()["id"]){
+                            echo '<td><input class="checkbox_users" type="checkbox" data-id="'. htmlspecialchars($row["id"], ENT_QUOTES) .'"></td>';
+                        }else{
+                            echo '<td></td>';
+                        }
                         echo "<td data-order='" . $row["id"] . "'> " . htmlspecialchars($row["id"], ENT_QUOTES) . "</td>";
                         echo "<td class=\"modifica\">" . htmlspecialchars($row["nume"], ENT_QUOTES) . "</td>";
                         echo "<td class=\"modifica\">" . htmlspecialchars($row["tel"], ENT_QUOTES) . "</td>";
                         echo "<td class=\"modifica\">" . htmlspecialchars($row["email"], ENT_QUOTES) . "</td>";
                         echo "<td class=\"modifica\">" . htmlspecialchars($row["categorie"], ENT_QUOTES) . "</td>";
-                        echo "<td><a data-id='" . htmlspecialchars($row["id"], ENT_QUOTES) . "' data-email='" . htmlspecialchars($row["nume"], ENT_QUOTES) . "' class='btn btn-xs btn-danger del-user'><i class='fa fa-times' aria-hidden=\"true\"></i> Sterge</a> ";
-                        echo "<a class='btn btn-xs btn-primary modifica-user'><i class='fa fa-pencil' aria-hidden=\"true\"></i> Modifica</a>";
-                        echo "</td></tr>";
+                        echo "<td><a class='btn btn-xs btn-primary modifica-user'><i class='fa fa-pencil' aria-hidden=\"true\"></i> Modifica </a>  ";
+                        if($row["id"]!=  get_logged_in_user()["id"]){
+                            echo "<a data-id='" . htmlspecialchars($row["id"], ENT_QUOTES) . "' data-email='" . htmlspecialchars($row["nume"], ENT_QUOTES) . "' class='btn btn-xs btn-danger del-user'><i class='fa fa-times' aria-hidden=\"true\"></i> Sterge </a></td>";
+                        }else{
+                            echo "</td>";
+                        }
+                        echo "</tr>";
                     }
                     ?>                    
                 </tbody>
