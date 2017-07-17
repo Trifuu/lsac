@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $('#users_table').DataTable();
 
-    $(".link-del-user").on("click", function () {
+    $(".del-user").on("click", function () {
         
         var r = confirm("Stergi contul " + $(this).attr("data-email") + "?");
         
@@ -22,6 +22,7 @@ $(document).ready(function () {
             return false;
         }
     });
+    
     $(".checkbox_users").change(function () {
         if (this.checked) {
             alert($(this).attr("data-id"));
@@ -61,4 +62,44 @@ $(document).ready(function () {
             },
         });
     });
+    $(".modifica").dblclick(function(){
+        $("#modifica").parent().text($("#modifica").val());
+        $("#modifica").remove();
+        
+        var text=$(this).text();
+        $(this).text("");
+        $(this).append("<input id=\"modifica\" type=\"text\" value=\""+text+"\" style=\"width:"+($(this).width()-20)+"px;\">");
+        $(".modifica-user").click(function(){
+            var col = $("#modifica").parent().index();
+            if(col==2){
+                col="nume";
+            }else if(col==3){
+                col="tel";
+            }else if(col==4){
+                col="email";
+            }else if(col==5){
+                col="categorie";
+            }
+            var id=$("#modifica").parent().parent("tr").children("td").eq(1).text();
+            if(id==$(this).parent().parent().children("td").eq(1).text())
+            {
+                var val=$("#modifica").val();
+                $.ajax({
+                    type: "POST",
+                    url: _SITE_BASE + "includes/ajax/post_update_users.php",
+                    data: {id: id,
+                           col: col,
+                           val: val
+                    },
+                    success: function (event) {
+                        $("#modifica").parent().text(val);
+                        $("#modifica").remove();
+                    },
+                    error: function (xhr, status, error) {
+                        //alert(error);
+                    },
+                });
+            }
+            }); 
+        });
 });
