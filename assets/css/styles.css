@@ -71,3 +71,6 @@
 .checkbox_users{
     padding: 0px;
 }
+.add_line{
+    display: none;
+}

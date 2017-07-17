@@ -1,8 +1,8 @@
 <?php
 defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
 ?>
-<div class="container-fluid standard-container container-page">
-    <div class="row" style="margin-top: 40px">
+<div class="container-fluid standard-container container-page" style="margin-top:-17px;">
+    <div class="row" style="margin-top: 44px">    
         <div class="col-lg-12 ">
             <table id="users_table" class="table table-striped">
                 <thead>
@@ -17,6 +17,14 @@ defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
                     </tr>
                 </thead>
                 <tbody>
+                    <tr class="add_line">
+                        <td></td><td></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><button id="buton_add" type="button" class="btn btn-success btn-xs"><i class='fa fa-times' aria-hidden="true"></i> Salveaza</button></td>
+                    </tr>
                     <?php
                     foreach ($users as $row) {
                         echo "<tr>";

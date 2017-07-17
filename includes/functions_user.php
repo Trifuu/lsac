@@ -47,5 +47,16 @@ function get_users($table){
         $result=$result."]";
         return $users ==false ? null:$result;
     }
-    //function add_user($nume,$parola,$email,$tel,$categorie)
+}
+function get_user_password(){
+    global $db,$sid;
+    try{
+        $stmt =$db->prepare("select parola from user where sid=:sid");
+        $stmt->bindParam(':sid', $sid, PDO::PARAM_STR, 64);
+        $stmt->execute();
+        $password=$stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $ex) {
+        die($ex->getMessage());
+    }
+    return $password["parola"];
 }
