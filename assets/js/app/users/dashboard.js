@@ -115,23 +115,23 @@ $(document).ready(function () {
     $("#delete_button").click(function(){
             
         if(checkbox.length>0){
-            var r = confirm("Stergi contul " + $(this).attr("data-email") + "?");
+            var r = confirm("Sigur stergi "+(checkbox.length==1? "contul?":"conturile?"));
 
             if (r == true) {
-            $.ajax({
-                type: "POST",
-                url: _SITE_BASE + "includes/ajax/post_delete_users.php",
-                data: {id: checkbox,
-                       multiple:true},
-                success: function (event) {
-                    //alert(event);
-                    console.log(event);
-                    location.reload();
-                },
-                error: function (xhr, status, error) {
-                    //alert(error);
-                },
-            });
+                $.ajax({
+                    type: "POST",
+                    url: _SITE_BASE + "includes/ajax/post_delete_users.php",
+                    data: {id: checkbox,
+                           multiple:true},
+                    success: function (event) {
+                        //alert(event);
+                        console.log(event);
+                        location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        //alert(error);
+                    },
+                });
             } else {
                 return false;
             }

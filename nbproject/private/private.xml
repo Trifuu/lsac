@@ -5,9 +5,6 @@
         <group>
             <file>file:/var/www/html/lsac/assets/js/app/users/dashboard.js</file>
             <file>file:/var/www/html/lsac/content/users/tmpl_dashboard.php</file>
-            <file>file:/var/www/html/lsac/includes/functions_user.php</file>
-            <file>file:/var/www/html/lsac/includes/config.php</file>
-            <file>file:/var/www/html/lsac/content/users/view_dashboard.php</file>
         </group>
     </open-files>
 </project-private>

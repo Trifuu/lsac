@@ -19,12 +19,12 @@ defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
                 <tbody>
                     <tr class="add_line">
                         <td></td><td></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
+                        <td><form id="validform1"><input type="text" name="nume"></form></td>
+                        <td><form id="validform2"><input type="text" name="telefon"></form></td>
+                        <td><form id="validform3"><input type="text" name="email"></form></td>
+                        <td><form id="validform4"><input type="text" name="categorie"></form></td>
                         <td><button id="buton_add" type="button" class="btn btn-success btn-xs"><i class='fa fa-times' aria-hidden="true"></i> Salveaza</button></td>
-                    </tr>
+                </tr>
                     <?php
                     foreach ($users as $row) {
                         echo "<tr>";
