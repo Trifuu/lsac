@@ -44,10 +44,11 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: _SITE_BASE + "includes/ajax/post_add_users.php",
-            data: {nume: $(".add_line td:nth-child(3) input").val(),
-                   telefon: $(".add_line td:nth-child(4) input").val(),
-                   email: $(".add_line td:nth-child(5) input").val(),
-                   categorie: $(".add_line td:nth-child(6) input").val()
+            data: {
+                nume: $(".add_line td:nth-child(3) input").val(),
+                telefon: $(".add_line td:nth-child(4) input").val(),
+                email: $(".add_line td:nth-child(5) input").val(),
+                categorie: $(".add_line td:nth-child(6) input").val()
             },
             success: function (event) {
                 $(".add_line").hide();

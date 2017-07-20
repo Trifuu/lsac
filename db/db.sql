@@ -27,6 +27,8 @@ CREATE TABLE IF NOT EXISTS `evenimente` (
     `id` INT(11) NOT NULL AUTO_INCREMENT ,
     `nume` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
     `locatie` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+    `data_incepere` BIGINT(20) NOT NULL DEFAULT '0',
+    `data_terminare` BIGINT(20) NOT NULL DEFAULT '0',
     `id_organizatori` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
     `id_voluntari` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
     `descriere` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -56,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `voluntari_logs` (
     `eveniment` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
     `nr_puncte` INT(11) NOT NULL DEFAULT '0',
     `data` BIGINT(20) NOT NULL,
-    `comentariu` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '' ,
+    `comentariu` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '' ,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci;
 
