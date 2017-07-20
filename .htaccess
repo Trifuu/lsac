@@ -1,0 +1,10 @@
+
+
+RewriteEngine on
+
+RewriteBase /lsac/
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule  ^([a-z-_]+)/([a-z-_]+)/$  index.php?page=$1&view=$2 [QSA,L]

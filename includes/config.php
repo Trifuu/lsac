@@ -13,6 +13,8 @@ define("_ROOT_ASSETS", _ROOT . "assets/");
 
 require_once _ROOT_INCLUDES . 'functions.php';
 require_once _ROOT_INCLUDES . 'functions_user.php';
+require_once _ROOT_INCLUDES . 'functions_evenimente.php';
+require_once _ROOT_INCLUDES . 'functions_voluntari.php';
 require_once _ROOT_INCLUDES . 'header.php';
 
 
@@ -20,8 +22,7 @@ $title_app_name = "LSAC";
 $title_app_separator = " // ";
 $title_app_title = "Default Title";
 
-define("_PROD_DOMAIN", "adresa");
-define("_PREPROD_DOMAIN", "localhost");
+
 define("_SITE_BASE", "http://localhost/lsac/");
 
 define("_SITE_CSS", _SITE_BASE . "assets/css/");

@@ -1,5 +1,7 @@
 <?php
 
+defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
+
 function get_evenimente(){
     global $db;
     try{
@@ -14,7 +16,7 @@ function get_evenimente(){
 function get_evenimente_after($data){
     global $db;
     try{
-        $stmt=$db->prepare("select * from evenimente where data_incepere>=:data");
+        $stmt=$db->prepare("select * from evenimente where data_incepere >= :data");
         $stmt->bindParam(':data',$data,PDO::PARAM_INT);
         $stmt->execute();
         $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -26,7 +28,7 @@ function get_evenimente_after($data){
 function get_evenimente_before($data){
     global $db;
     try{
-        $stmt=$db->prepare("select * from evenimente where data_incepere<=:data");
+        $stmt=$db->prepare("select * from evenimente where data_incepere <= :data");
         $stmt->bindParam('data',$data,PDO::PARAM_INT);
         $stmt->execute();
         $result=$stmt->fetchAll(PDO::FETCH_ASSOC);

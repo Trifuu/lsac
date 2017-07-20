@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $("#afiseaza_inainte").click(function(){
         $.ajax({
+            dataType: "json",
             type:"POST",
             url:_SITE_BASE + "includes/ajax/post_afiseaza_evenimente.php",
             data:{
@@ -8,16 +9,17 @@ $(document).ready(function () {
                 tip:1
             },
             success: function(event){
-                if(event=="nu"){
-                    alert("Format incorect pentru data! (DD.MM.YYYY)");
+                if(event=="incorect"){
+                    alert("Format incorect pentru data! (recomandat DD.MM.YYYY)");
                 } else {
-                    //completare
+                    console.log(event);
                 }
             }
         });
     });
     $("#afiseaza_dupa").click(function(){
         $.ajax({
+            dataType: "json",
             type:"POST",
             url:_SITE_BASE + "includes/ajax/post_afiseaza_evenimente.php",
             data:{
@@ -25,10 +27,10 @@ $(document).ready(function () {
                 tip:2
             },
             success: function(event){
-                if(event=="nu"){
-                    alert("Format incorect pentru data! (DD.MM.YYYY)");
+                if(event=="incorect"){
+                    alert("Format incorect pentru data! (recomandat DD.MM.YYYY)");
                 } else {
-                    //completare
+                    console.log(event);
                 }
             }
         });
