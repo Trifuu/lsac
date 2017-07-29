@@ -39,7 +39,6 @@ if($stamp==false){
         } else {
             $result[$i]["voluntari"][0]=  get_nume_voluntar($voluntari[$i]["id_voluntari"]);
         }        
-        
     }
     echo json_encode($result);
 }

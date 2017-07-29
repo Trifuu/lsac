@@ -87,6 +87,16 @@
     border-radius: 4px;
 }
 .div_input{
-    width: 200px;
-    margin-left: 25px;
+    width: 250px;
+}
+.interior_event{
+    text-align: center;
+    height: 30px;
+    margin-top: 5px;
+    text-transform:capitalize;
+}
+.detalii_evenimente{
+    float:right;
+    padding: 2px;
+    margin-right: 5px;
 }
