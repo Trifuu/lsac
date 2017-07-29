@@ -12,7 +12,12 @@ $(document).ready(function () {
                 if(event=="incorect"){
                     alert("Format incorect pentru data! (recomandat DD.MM.YYYY)");
                 } else {
-                    console.log(event);
+                    console.log(event[0]["nume"]);
+                    $(".before_table thead tr th").text("Inainte de data de:"+$("#data_inainte").val());
+                    var limit=event.length>4? 4:event.length;
+                    for(var i=0;i<limit;i++){
+                        $(".before_table tbody tr:nth-child("+(i+1)+") td:first-child").text(event[i]["nume"]);
+                    }
                 }
             }
         });

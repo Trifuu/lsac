@@ -79,3 +79,14 @@
     border-radius: 0px;
     width: 66px;
 }
+.afiseza_evenimente{
+    max-width: 250px;
+    border: 1px solid #ddd;
+    min-height: 100px;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+.div_input{
+    width: 200px;
+    margin-left: 25px;
+}

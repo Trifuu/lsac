@@ -4,9 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/var/www/html/lsac/.htaccess</file>
-            <file>file:/var/www/html/lsac/assets/js/app/evenimente/dashboard.js</file>
-            <file>file:/var/www/html/lsac/includes/ajax/post_afiseaza_evenimente.php</file>
+            <file>file:/var/www/html/lsac/includes/config.php</file>
             <file>file:/var/www/html/lsac/includes/functions.php</file>
+            <file>file:/var/www/html/lsac/index.php</file>
         </group>
     </open-files>
 </project-private>

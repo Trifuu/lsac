@@ -4,9 +4,9 @@ defined('_IEXEC') or die('Acces restrictionat. Access Denied.');
 
 
 function getUrl($page, $view, $echo = false, $query = []) {
-    $curl = _SITE_BASE . "?page=$page&view=$view";
+    //$curl = _SITE_BASE . "?page=$page&view=$view";
 
-    //$curl = _SITE_BASE . "$page/$view/";
+    $curl = _SITE_BASE . "$page/$view/";
 
     if (count($query)) {
         $cnt = 0;
